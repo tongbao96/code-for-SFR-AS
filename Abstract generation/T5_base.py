@@ -15,7 +15,8 @@ t5_model.eval()
 
 num_beams = 5
 
-# 添加不同section对应的最大输出长度
+## output length for different section
+
 section_max_lengths = {
     'background': 90,
     'method': 75,

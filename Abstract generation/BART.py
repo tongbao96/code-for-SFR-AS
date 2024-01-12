@@ -13,7 +13,7 @@ bart_model.to(device)
 bart_model.eval()
 
 num_beams = 4
-# 添加不同section对应的最大输出长度
+# output length for different section
 section_max_lengths = {
     'background': 90,
     'method': 75,
