@@ -80,32 +80,32 @@ We limit the summary length of the model output to no more than 300 and no less 
 ## Directory structure
 
 ```
-code-for-SFR-AS                                         Rood directory
-├── Code                                   				Source code folder
-│   ├── Abstract generation                             code for AR task
-       ├──────BART.py                              		code for BART
-       ├──────GPT-4.py									code for GPT-4
-       ├──────Longformer.py								code for Longformer
-       ├──────Pegasus.py								code for Pegasus
-       ├──────rouge_calcu.py							code for Rouge metric
-       ├──────T5_base.py								code for T5-base
-       ├──────dataset									AR Dataset folder
-       ├──────output_folder								Output summary folder
-│   ├── Structure function recognition					code for SFR task
-       ├──────dataset.py								Code for load data from dataset
-       ├──────model.py									Scibert model
-       ├──────params.py									params of Scibert
-       ├──────test.py									coud for test new paragrath
-       ├──────train.py									coud for train
-       ├──────utils.py									coud for utils
-       ├──────dataset									SFR Dataset folder						
-       ├──────logs										save train logs
-       ├──────runs										save run time
-       ├──────weights									save weights after train
-├── Dataset  											Raw dataset
-│   ├── NLM_Mapping										Mapping title of chapter to IMRaD
-│   ├── arXiv											Raw arXiv dataset
-│   ├──  pubmed											Raw Pubmed dataset
+- **code-for-SFR-AS**                         *Root directory*
+  ├── **Code**                                *Source code folder*
+  |   ├── **Abstract generation**             *Code for AR task*
+  |   |   ├── ─── `BART.py`                   *Code for BART*
+  |   |   ├── ─── `GPT-4.py`                  *Code for GPT-4*
+  |   |   ├── ─── `Longformer.py`             *Code for Longformer*
+  |   |   ├── ─── `Pegasus.py`                *Code for Pegasus*
+  |   |   ├── ─── `rouge_calcu.py`            *Code for Rouge metric*
+  |   |   ├── ─── `T5_base.py`                *Code for T5-base*
+  |   |   ├── ─── `dataset`                   *AR Dataset folder*
+  |   |   └── ─── `output_folder`             *Output summary folder*
+  |   ├── **Structure function recognition**  *Code for SFR task*
+  |   |   ├── ─── `dataset.py`                *Code for loading data from dataset*
+  |   |   ├── ─── `model.py`                  *SciBERT model*
+  |   |   ├── ─── `params.py`                 *Params of SciBERT*
+  |   |   ├── ─── `test.py`                   *Code for testing new paragraphs*
+  |   |   ├── ─── `train.py`                  *Code for training*
+  |   |   ├── ─── `utils.py`                  *Code for utils*
+  |   |   ├── ─── `dataset`                   *SFR Dataset folder*
+  |   |   ├── ─── `logs`                      *Save train logs*
+  |   |   ├── ─── `runs`                      *Save run history*
+  |   |   └── ─── `weights`                   *Save weights after train*
+- **Dataset**                                 *Raw dataset*
+  ├── ─── **NLM_Mapping**                    *Mapping title of chapter to IMRaD*
+  ├── ─── **arXiv**                          *Raw arXiv dataset*
+  └── ─── **pubmed**                         *Raw Pubmed dataset*
 ```
 
 ## How to start:
@@ -185,3 +185,32 @@ Relevant reference is "A Discourse-Aware Attention Model for Abstractive Summari
 Arman Cohan, Franck Dernoncourt, Doo Soon Kim, Trung Bui, Seokhwan Kim, Walter Chang, and Nazli Goharian  
 NAACL-HLT 2018
 ```
+
+
+
+- **code-for-SFR-AS**                         *Root directory*
+  ├── **Code**                                *Source code folder*
+  |   ├── **Abstract generation**             *Code for AR task*
+  |   |   ├── ─── `BART.py`                   *Code for BART*
+  |   |   ├── ─── `GPT-4.py`                  *Code for GPT-4*
+  |   |   ├── ─── `Longformer.py`             *Code for Longformer*
+  |   |   ├── ─── `Pegasus.py`                *Code for Pegasus*
+  |   |   ├── ─── `rouge_calcu.py`            *Code for Rouge metric*
+  |   |   ├── ─── `T5_base.py`                *Code for T5-base*
+  |   |   ├── ─── `dataset`                   *AR Dataset folder*
+  |   |   └── ─── `output_folder`             *Output summary folder*
+  |   ├── **Structure function recognition**  *Code for SFR task*
+  |   |   ├── ─── `dataset.py`                *Code for loading data from dataset*
+  |   |   ├── ─── `model.py`                  *SciBERT model*
+  |   |   ├── ─── `params.py`                 *Params of SciBERT*
+  |   |   ├── ─── `test.py`                   *Code for testing new paragraphs*
+  |   |   ├── ─── `train.py`                  *Code for training*
+  |   |   ├── ─── `utils.py`                  *Code for utils*
+  |   |   ├── ─── `dataset`                   *SFR Dataset folder*
+  |   |   ├── ─── `logs`                      *Save train logs*
+  |   |   ├── ─── `runs`                      *Save run history*
+  |   |   └── ─── `weights`                   *Save weights after train*
+- **Dataset**                                 *Raw dataset*
+  ├── ─── **NLM_Mapping**                    *Mapping title of chapter to IMRaD*
+  ├── ─── **arXiv**                          *Raw arXiv dataset*
+  └── ─── **pubmed**                         *Raw Pubmed dataset*
