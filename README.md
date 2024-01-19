@@ -114,16 +114,18 @@ code-for-SFR-AS                                         Rood directory
 
 1. Run `load_dataset.py` to download and process the dataset, saving it locally. 
 
-2. `classes_labels.json` contains the mapping between categories and their numerical labels. 
+2. Download the [weights]([allenai/scibert: A BERT model for scientific text. (github.com)](https://github.com/allenai/scibert)) file to the SCIBERT directory
 
-3. Some parameter settings are in `params.py`, which can be modified according to your needs. Alternatively, you can modify these parameters by entering commands in the terminal. Additionally, the template for prompts is also present in this file.
+3. `classes_labels.json` contains the mapping between categories and their numerical labels. 
 
-4. Run `train.py` to start training. The trained model is saved by default in the `weights` folder. If you want to view the changes in various parameters/metrics during training, the code provides two recording methods:
+4. Some parameter settings are in `params.py`, which can be modified according to your needs. Alternatively, you can modify these parameters by entering commands in the terminal. Additionally, the template for prompts is also present in this file.
+
+5. Run `train.py` to start training. The trained model is saved by default in the `weights` folder. If you want to view the changes in various parameters/metrics during training, the code provides two recording methods:
 
    - Check the corresponding `txt` file in the `logs` directory, which records the parameters set for training and evaluation metrics for each epoch.
    - In the `runs` directory, the results recorded using TensorBoard are saved. Assuming the path is `runs/bert-base-uncased-Sep19_16-31-56`, you can start TensorBoard with the command `tensorboard --logdir=runs/bert-base-uncased-Sep19_16-31-26`.
 
-5. Run `test.py` to evaluate the model on the test set. Assuming the model weights are saved as `bert-base-uncased-Sep19_16-31-56-epoch0.pth`, you can run `test.py` in the terminal using the following command:
+6. Run `test.py` to evaluate the model on the test set. Assuming the model weights are saved as `bert-base-uncased-Sep19_16-31-56-epoch0.pth`, you can run `test.py` in the terminal using the following command:
 
    ```commandline
    python test.py --weights_name=bert-base-uncased-Sep19_16-31-56-epoch0.pth
