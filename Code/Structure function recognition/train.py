@@ -78,7 +78,6 @@ def main(args):
                                                    num_training_steps=len(train_loader) * args.num_train_epochs)
 
     # tensorboard --logdir=runs
-    # 用于记录训练过程中各个参数/指标的变化
     current_time = datetime.now().strftime("%b%d_%H-%M-%S")
     log_dir = os.path.join(sys.path[0], "runs", "{}_{}".format(args.pretrained_model_name_or_path, current_time))
     tb_writer = SummaryWriter(log_dir=log_dir)
@@ -121,7 +120,7 @@ def main(args):
             tb_writer.add_scalar(key, value, epoch)
             logger.info(f"{key}: {value}")
 
-        # 保存在验证集上 macro_f1 最高的模型
+        # best macro_f1 on Dev
         if dev_result['macro_f1'] > best_macro_f1:
             torch.save(model.state_dict(), os.path.join(args.weights_dir, '{}-{}-epoch{}-macro_f1{:.3f}.pth'.format(
                        args.pretrained_model_name_or_path, current_time, epoch, dev_result['macro_f1'])))
