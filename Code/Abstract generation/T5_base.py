@@ -25,7 +25,7 @@ section_max_lengths = {
 }
 processed_index = 0
 
-def bart_summarize(input_text, num_beams, max_length):
+def t5_summarize(input_text, num_beams, max_length):
     input_text = str(input_text)
     input_text = ' '.join(input_text.split())
     input_tokenized = t5_tokenizer.encode(input_text, return_tensors='pt').to(device)
@@ -69,7 +69,7 @@ def process_article(article, articles_length):
     for section_name, section_text in filtered_sections.items():
         final_text = truncate_text(section_text, 1024)
         max_length = section_max_lengths.get(section_name, num_words)
-        summaries = bart_summarize(final_text, num_beams, max_length)
+        summaries = t5_summarize(final_text, num_beams, max_length)
         section_result = {section_name: summaries}
         result.append(section_result)
 

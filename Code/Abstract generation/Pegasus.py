@@ -21,7 +21,7 @@ section_max_lengths = {
 }
 processed_index = 0
 
-def bart_summarize(input_text, num_beams, num_words):
+def pegasus_summarize(input_text, num_beams, num_words):
     input_text = str(input_text)
     input_text = ' '.join(input_text.split())
     input_tokenized = pegasus_tokenizer.encode(input_text, return_tensors='pt').to(device)
@@ -62,7 +62,7 @@ def process_article(article, articles_length):
     filtered_sections = {key: value for key, value in sections.items() if key != 'No match'}
     for section_name, section_text in filtered_sections.items():
         final_text = truncate_text(section_text, 1024)
-        summaries = bart_summarize(final_text, num_beams, num_words)
+        summaries = pegasus_summarize(final_text, num_beams, num_words)
         section_result = {section_name: summaries}
         result.append(section_result)
 
