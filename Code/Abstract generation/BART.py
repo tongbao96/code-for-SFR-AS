@@ -15,10 +15,10 @@ bart_model.eval()
 num_beams = 4
 # output length for different section
 section_max_lengths = {
-    'background': 90,
-    'method': 75,
-    'result': 90,
-    'conclusion': 45
+    'BACKGROUNDS': 90,
+    'METHODS': 75,
+    'RESULTS': 90,
+    'CONCLUSIONS': 45
 }
 processed_index = 0
 
