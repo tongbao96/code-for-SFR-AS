@@ -82,7 +82,7 @@ We limit the summary length of the model output to no more than 300 and no less 
 ```
 code-for-SFR-AS                         Rood directory
 ├── Code                                Source code folder
-│   ├── Abstract generation             code for AR task
+  ├── Abstract generation             code for AR task
        ├──────BART.py                   code for BART
        ├──────GPT-4.py									code for GPT-4
        ├──────Longformer.py						  code for Longformer
@@ -91,7 +91,7 @@ code-for-SFR-AS                         Rood directory
        ├──────T5_base.py								code for T5-base
        ├──────dataset									  AR Dataset folder
        ├──────output_folder							Output summary folder
-│   ├── Structure function recognition	code for SFR task
+  ├── Structure function recognition	code for SFR task
        ├──────dataset.py								code for load data from dataset
        ├──────model.py									Scibert model
        ├──────params.py									params of Scibert
