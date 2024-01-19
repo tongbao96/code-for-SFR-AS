@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time    : 2024/1/7 17:27
 # @Author  : tbao
 # @File    : rougejisuan.py
 # @Description : This function is used to calculate ROUGE scores for summaries generated in a specific task.
@@ -9,11 +8,11 @@ import json
 from rouge import Rouge
 
 # Read json1 file
-with open('./output_folder/all_summaries_val.json', 'r', encoding='utf-8') as file:
+with open('./output_folder/t5-pubmed_summaries.json', 'r', encoding='utf-8') as file:
     json1_data = json.load(file)
 
 # Read json2 file
-with open('arXiv_val_30000.json', 'r', encoding='utf-8') as file:
+with open('pubmed_10000.json', 'r', encoding='utf-8') as file:
     json2_data = json.load(file)
 
 # Build a dictionary of abstract_text using article_id
