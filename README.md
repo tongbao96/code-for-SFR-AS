@@ -1,8 +1,9 @@
-# Coder for paper: Enhancing Abstractive Summarization of Scientific Articles based on Structure Information
+# Enhancing Abstractive Summarization of Scientific Articles based on Structure Information
 
-------
 
 ## Overview
+
+**Dataset and source code for paper "Enhancing Abstractive Summarization of Scientific Articles based on Structure Information".**
 
 In this study, we propose a two-stage abstract summarization(AR) framework for scientific articles based on structure function recognition(SFR). the three main contributions of this paper are: 
 
