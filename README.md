@@ -180,14 +180,12 @@ We limit the summary length of the model output to no more than 300 and no less 
 | Longformer-16k     | 3.89                | 3.88          | 3.80        |
 | GPT-4-32K          | **4.09**            | **4.03**      | **4.41**    |
 
-## Citing
+## Citation
+Please cite the following paper if you use this code and dataset in your work.
 
-Relevant reference is "A Discourse-Aware Attention Model for Abstractive Summarization of Long Documents"
-
-```
-"A Discourse-Aware Attention Model for Abstractive Summarization of Long Documents"  
+>A Discourse-Aware Attention Model for Abstractive Summarization of Long Documents"  
 Arman Cohan, Franck Dernoncourt, Doo Soon Kim, Trung Bui, Seokhwan Kim, Walter Chang, and Nazli Goharian  
 NAACL-HLT 2018
-```
+
 
 
