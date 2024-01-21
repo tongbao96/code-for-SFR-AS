@@ -5,7 +5,7 @@
 
 **Dataset and source code for paper "Enhancing Abstractive Summarization of Scientific Articles based on Structure Information".**
 
-In this study, we propose a two-stage abstract summarization(AR) framework for scientific articles based on structure function recognition(SFR). Our work includes the followig aspects:: 
+In this study, we propose a two-stage abstract summarization(AR) framework for scientific articles based on structure function recognition(SFR). Our work includes the followig aspects: 
   - A two-stage scientific article summarization framework is proposed to enhance the comprehensiveness of summaries based on chapter structure information and overcome the input length limitations of generation models. 
   - We explore the impact of the different components of a chapter on the structure function recognition and systematically analyze how and why the chapter function helps to improve the effectiveness of abstractive summarization in the scientific article.
   - Through experimental studies on two widely used scientific paper summarization datasets, the results indicate that our proposed method outperforms advanced abstractive summarization baselines.
