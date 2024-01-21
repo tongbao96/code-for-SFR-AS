@@ -9,7 +9,37 @@ In this study, we propose a two-stage abstract summarization(AR) framework for s
   - A two-stage scientific article summarization framework is proposed to enhance the comprehensiveness of summaries based on chapter structure information and overcome the input length limitations of generation models. 
   - We explore the impact of the different components of a chapter on the structure function recognition and systematically analyze how and why the chapter function helps to improve the effectiveness of abstractive summarization in the scientific article.
   - Through experimental studies on two widely used scientific paper summarization datasets, the results indicate that our proposed method outperforms advanced abstractive summarization baselines.
+    
+## Directory structure
 
+```
+- code-for-SFR-AS                             Root directory
+  ├── Code                                    Source code folder
+  |   ├── Abstract generation                 Code for AR task
+  |   |   ├── ─── `BART.py`                   Code for BART
+  |   |   ├── ─── `GPT-4.py`                  Code for GPT-4
+  |   |   ├── ─── `Longformer.py`             Code for Longformer
+  |   |   ├── ─── `Pegasus.py`                Code for Pegasus
+  |   |   ├── ─── `rouge_calcu.py`            Code for Rouge metric
+  |   |   ├── ─── `T5_base.py`                Code for T5-base
+  |   |   ├── ─── `dataset`                   AR Dataset folder
+  |   |   └── ─── `output_folder`             Output summary folder
+  |   ├── Structure function recognition      Code for SFR task
+  |   |   ├── ─── `dataset.py`                Code for loading data from dataset
+  |   |   ├── ─── `model.py`                  SciBERT model
+  |   |   ├── ─── `params.py`                 Params of SciBERT
+  |   |   ├── ─── `test.py`                   Code for testing new paragraphs
+  |   |   ├── ─── `train.py`                  Code for training
+  |   |   ├── ─── `utils.py`                  Code for utils
+  |   |   ├── ─── `dataset`                   SFR Dataset folder
+  |   |   ├── ─── `logs`                      Save train logs
+  |   |   ├── ─── `runs`                      Save run history
+  |   |   └── ─── `weights`                   Save weights after train
+- Dataset                                     Raw dataset
+  ├── ─── NLM_Mapping                         Mapping title of chapter to IMRaD
+  ├── ─── arXiv                               Raw arXiv dataset
+  └── ─── pubmed                              Raw Pubmed dataset
+```
 ## Raw Data 
 
 This paper conducts experiments on two widely accepted datasets of scientific paper abstracts, ArXiv and PubMed , Original data from the paper [A Discourse-Aware Attention Model for Abstractive Summarization of Long Document](https://arxiv.org/abs/1804.0568 ).
@@ -77,36 +107,7 @@ For the AR task, we selecte articles from both the arXiv and Pubmed datasets tha
 
 We limit the summary length of the model output to no more than 300 and no less than 50. （1）For models where the length of the full text exceeds the input length of the model (i.e., BARD, PEGASUS, T5-base), we use a divide-and-conquer approach to generate summary sentences for four sections, which are then concatenated to form the final abstract. （2）For models that are capable of handling long documents, we use the chapter labels along with the content as full-text inputs. 
 
-## Directory structure
 
-```
-- code-for-SFR-AS                             Root directory
-  ├── Code                                    Source code folder
-  |   ├── Abstract generation                 Code for AR task
-  |   |   ├── ─── `BART.py`                   Code for BART
-  |   |   ├── ─── `GPT-4.py`                  Code for GPT-4
-  |   |   ├── ─── `Longformer.py`             Code for Longformer
-  |   |   ├── ─── `Pegasus.py`                Code for Pegasus
-  |   |   ├── ─── `rouge_calcu.py`            Code for Rouge metric
-  |   |   ├── ─── `T5_base.py`                Code for T5-base
-  |   |   ├── ─── `dataset`                   AR Dataset folder
-  |   |   └── ─── `output_folder`             Output summary folder
-  |   ├── Structure function recognition      Code for SFR task
-  |   |   ├── ─── `dataset.py`                Code for loading data from dataset
-  |   |   ├── ─── `model.py`                  SciBERT model
-  |   |   ├── ─── `params.py`                 Params of SciBERT
-  |   |   ├── ─── `test.py`                   Code for testing new paragraphs
-  |   |   ├── ─── `train.py`                  Code for training
-  |   |   ├── ─── `utils.py`                  Code for utils
-  |   |   ├── ─── `dataset`                   SFR Dataset folder
-  |   |   ├── ─── `logs`                      Save train logs
-  |   |   ├── ─── `runs`                      Save run history
-  |   |   └── ─── `weights`                   Save weights after train
-- Dataset                                     Raw dataset
-  ├── ─── NLM_Mapping                         Mapping title of chapter to IMRaD
-  ├── ─── arXiv                               Raw arXiv dataset
-  └── ─── pubmed                              Raw Pubmed dataset
-```
 
 ## How to start:
 
