@@ -34,7 +34,7 @@ In this study, we propose a two-stage abstract summarization(AR) framework for s
   |   |   ├── ─── `logs`                      Save train logs
   |   |   ├── ─── `runs`                      Save run history
   |   |   └── ─── `weights`                   Save weights after train
-- Dataset                                     Raw dataset
+  Dataset                                     Raw dataset
   ├── ─── NLM_Mapping                         Mapping title of chapter to IMRaD
   ├── ─── arXiv                               Raw arXiv dataset
   └── ─── pubmed                              Raw Pubmed dataset
