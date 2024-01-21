@@ -38,7 +38,7 @@ In this study, we propose a two-stage abstract summarization(AR) framework for s
   |   ├── NLM_Mapping                     Mapping title of chapter to IMRaD
   |   ├── arXiv                           Raw arXiv dataset
   |   └── pubmed                          Raw Pubmed dataset
-  └────README.md
+  └───README.md
 </pre>
 
 ## Dataset Discription
