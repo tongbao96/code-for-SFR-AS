@@ -12,8 +12,7 @@ In this study, we propose a two-stage abstract summarization(AR) framework for s
     
 ## Directory structure
 
-```
-- code-for-SFR-AS                             Root directory
+<pre>code-for-SFR-AS                             Root directory
   ├── Code                                    Source code folder
   |   ├── Abstract generation                 Code for AR task
   |   |   ├── ─── `BART.py`                   Code for BART
@@ -39,7 +38,7 @@ In this study, we propose a two-stage abstract summarization(AR) framework for s
   ├── ─── NLM_Mapping                         Mapping title of chapter to IMRaD
   ├── ─── arXiv                               Raw arXiv dataset
   └── ─── pubmed                              Raw Pubmed dataset
-```
+</pre>
 
 ## Dataset Discription
 
