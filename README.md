@@ -183,9 +183,6 @@ We limit the summary length of the model output to no more than 300 and no less 
 ## Citation
 Please cite the following paper if you use this code and dataset in your work.
 
->A Discourse-Aware Attention Model for Abstractive Summarization of Long Documents"  
-Arman Cohan, Franck Dernoncourt, Doo Soon Kim, Trung Bui, Seokhwan Kim, Walter Chang, and Nazli Goharian  
-NAACL-HLT 2018
-
+>Tong Bao, Heng Zhang, Chengzhi Zhang\*. Enhancing Abstractive Summarization of Scientific Articles based on Structure Information. ***Journal of the Association for Information Science and Technology***, 2023 (Submitted).
 
 
