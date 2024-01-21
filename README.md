@@ -12,7 +12,7 @@ In this study, we propose a two-stage abstract summarization(AR) framework for s
     
 ## Directory structure
 
-<pre>  code-for-SFR-AS                    Root directory
+<pre>  code-for-SFR-AS                         Root directory
   ├── Code                                Source code folder
   |   ├── Abstract generation             Code for AR task
   |   |   ├── BART.py                     Code for BART
