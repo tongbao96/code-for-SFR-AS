@@ -40,7 +40,10 @@ In this study, we propose a two-stage abstract summarization(AR) framework for s
   ├── ─── arXiv                               Raw arXiv dataset
   └── ─── pubmed                              Raw Pubmed dataset
 ```
-## Raw Data 
+
+## Dataset Discription
+
+### Raw Data 
 
 This paper conducts experiments on two widely accepted datasets of scientific paper abstracts, ArXiv and PubMed , Original data from the paper [A Discourse-Aware Attention Model for Abstractive Summarization of Long Document](https://arxiv.org/abs/1804.0568 ).
 
@@ -56,7 +59,7 @@ The files are in jsonlines format where each line is a json object corresponding
 }
 ```
 
-## Data process
+### Data process
 
 We use [National Library of Medicine (NLM) ]([lhncbc.nlm.nih.gov/ii/areas/structured-abstracts/downloads/Structured-Abstracts-Labels-102615.txt](https://www.lhncbc.nlm.nih.gov/ii/areas/structured-abstracts/downloads/Structured-Abstracts-Labels-102615.txt))files to map and align chapter title according to the IMRaD (*Introduction*, *Methods*, *Results* and *Conclusion*)  format.
 
