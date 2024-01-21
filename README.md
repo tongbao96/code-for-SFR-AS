@@ -90,7 +90,7 @@ the `classes_labels.json`follows the format:
 }
 ```
 
-For the AR task, we selecte articles from both the arXiv and Pubmed datasets that simultaneously include *Background*, *Methods*, *Results*, and *Conclusions* sections. For both two datasets, we limit section length to 1500 tokens, and the number of abstract words to a range of 50-300. the input data format as follwing:
+For the AS task, we selecte articles from both the arXiv and Pubmed datasets that simultaneously include *Background*, *Methods*, *Results*, and *Conclusions* sections. For both two datasets, we limit section length to 1500 tokens, and the number of abstract words to a range of 50-300. the input data format as follwing:
 
 ```
 [
@@ -155,7 +155,7 @@ We limit the summary length of the model output to no more than 300 and no less 
 | **SciBERT** | **92.38%**  | 91.21%      | **91.79%**  | 89.01%      | 87.84%      | **88.42%**  |
 | T5          | 92.21%      | **91.24%**  | 91.72%      | 87.90%      | 86.61%      | 87.25%      |
 
-- **Results of AR task**
+- **Results of AS task**
 
 | **Models**                             |             | **arXiv**   |             |             | **Pubmed**  |             |
 | -------------------------------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
