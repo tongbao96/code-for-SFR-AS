@@ -12,32 +12,32 @@ In this study, we propose a two-stage abstract summarization(AR) framework for s
     
 ## Directory structure
 
-<pre>  code-for-SFR-AS                             Root directory
-  ├── Code                                    Source code folder
-  |   ├── Abstract generation                 Code for AR task
-  |   |   ├── ─── `BART.py`                   Code for BART
-  |   |   ├── ─── `GPT-4.py`                  Code for GPT-4
-  |   |   ├── ─── `Longformer.py`             Code for Longformer
-  |   |   ├── ─── `Pegasus.py`                Code for Pegasus
-  |   |   ├── ─── `rouge_calcu.py`            Code for Rouge metric
-  |   |   ├── ─── `T5_base.py`                Code for T5-base
-  |   |   ├── ─── `dataset`                   AR Dataset folder
-  |   |   └── ─── `output_folder`             Output summary folder
-  |   ├── Structure function recognition      Code for SFR task
-  |   |   ├── ─── `dataset.py`                Code for loading data from dataset
-  |   |   ├── ─── `model.py`                  SciBERT model
-  |   |   ├── ─── `params.py`                 Params of SciBERT
-  |   |   ├── ─── `test.py`                   Code for testing new paragraphs
-  |   |   ├── ─── `train.py`                  Code for training
-  |   |   ├── ─── `utils.py`                  Code for utils
-  |   |   ├── ─── `dataset`                   SFR Dataset folder
-  |   |   ├── ─── `logs`                      Save train logs
-  |   |   ├── ─── `runs`                      Save run history
-  |   |   └── ─── `weights`                   Save weights after train
-  Dataset                                     Raw dataset
-  |   ├── ─── NLM_Mapping                     Mapping title of chapter to IMRaD
-  |   ├── ─── arXiv                           Raw arXiv dataset
-  |   └── ─── pubmed                          Raw Pubmed dataset
+<pre>  code-for-SFR-AS                    Root directory
+  ├── Code                                Source code folder
+  |   ├── Abstract generation             Code for AR task
+  |   |   ├── BART.py                     Code for BART
+  |   |   ├── GPT-4.py                    Code for GPT-4
+  |   |   ├── Longformer.py               Code for Longformer
+  |   |   ├── Pegasus.py                  Code for Pegasus
+  |   |   ├── rouge_calcu.py              Code for Rouge metric
+  |   |   ├── T5_base.py                  Code for T5-base
+  |   |   ├── dataset                     AR Dataset folder
+  |   |   └── output_folder               Output summary folder
+  |   ├── Structure function recognition  Code for SFR task
+  |   |   ├── dataset.py                  Code for loading data from dataset
+  |   |   ├── model.py                    SciBERT model
+  |   |   ├── params.py                   Params of SciBERT
+  |   |   ├── test.py                     Code for testing new paragraphs
+  |   |   ├── train.py                    Code for training
+  |   |   ├── utils.py                    Code for utils
+  |   |   ├── dataset                     SFR Dataset folder
+  |   |   ├── logs                        Save train logs
+  |   |   ├── runs                        Save run history
+  |   |   └── weights                     Save weights after train
+  Dataset                                 Raw dataset
+  |   ├── NLM_Mapping                     Mapping title of chapter to IMRaD
+  |   ├── arXiv                           Raw arXiv dataset
+  |   └── pubmed                          Raw Pubmed dataset
   └────README.md
 </pre>
 
