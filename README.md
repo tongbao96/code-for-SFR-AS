@@ -157,7 +157,7 @@ We limit the summary length of the model output to no more than 300 and no less 
 
 - **Results of AS task**
 
-| **Models**                             |                **arXiv**                |                **Pubmed**               |
+| **Models**                             |             |  **arXiv**  |             |             |  **Pubmed** |             |
 | -------------------------------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 |                                        | **Rouge-1** | **Rouge-2** | **Rouge-L** | **Rouge-1** | **Rouge-2** | **Rouge-L** |
 | BERTSUM  (Liu,  2019)                  | 31.98       | 10.02       | 27.75       | 34.39       | 13.24       | 30.90       |
