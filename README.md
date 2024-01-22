@@ -145,7 +145,7 @@ We limit the summary length of the model output to no more than 300 and no less 
 
 - **Results of SFR task**
 
-| **Model**   |               **Pubmed**                |                **arXiv**                |
+| **Model**   |             |  **Pubmed** |             |             | **arXiv**   |             |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 |             | **Macro_R** | **Macro_P** | **Macro_F** | **Macro_P** | **Macro_R** | **Macro_F** |
 | BiLSTM      | 89.97%      | 88.85%      | 89.41%      | 86.21%      | 84.62%      | 85.40%      |
