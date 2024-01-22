@@ -12,7 +12,7 @@ In this study, we propose a two-stage abstract summarization(AS) framework for s
     
 ## Directory structure
 
-<pre>  code-for-AS-SFR                         Root directory
+<pre>  SIB-AS                         Root directory
   ├── Code                                Source code folder
   |   ├── Abstract summarization          Code for AS task
   |   |   ├── BART.py                     Code for BART
