@@ -288,10 +288,10 @@ We limit the summary length of the model output to no more than 300 and no less 
   <tr>
     <td>GPT-4-32K</td>
     <td>29.96</td>
-    <td>09.13</td>
+    <td>9.13</td>
     <td>27.01</td>
     <td>30.02</td>
-    <td>09.17</td>
+    <td>9.17</td>
     <td>27.62</td>
   </tr>
 </table>
