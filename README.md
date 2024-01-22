@@ -12,7 +12,7 @@ In this study, we propose a two-stage abstract summarization(AS) framework for s
     
 ## Directory structure
 
-<pre>  SIB-AS                                  Root directory
+<pre>  SFR-AS                                  Root directory
   ├── Code                                Source code folder
   |   ├── Abstract summarization          Code for AS task
   |   |   ├── BART.py                     Code for BART
@@ -21,7 +21,7 @@ In this study, we propose a two-stage abstract summarization(AS) framework for s
   |   |   ├── Pegasus.py                  Code for Pegasus
   |   |   ├── rouge_calcu.py              Code for Rouge metric
   |   |   ├── T5_base.py                  Code for T5-base
-  |   |   ├── dataset                     Dataset folder for AS task
+  |   |   ├── articles_for_AS_task        Selected articles from Pubmed and arXiv dataset
   |   |   └── output_folder               Output summary folder
   |   ├── Structure function recognition  Code for SFR task
   |   |   ├── dataset.py                  Code for loading data from dataset
@@ -30,11 +30,11 @@ In this study, we propose a two-stage abstract summarization(AS) framework for s
   |   |   ├── test.py                     Code for testing new paragraphs
   |   |   ├── train.py                    Code for training
   |   |   ├── utils.py                    Code for utils
-  |   |   ├── dataset                     Dataset folder for SFR task
+  |   |   ├── SFR_traning_dataset         Training Dataset folder for SFR task
   |   |   ├── logs                        Save train logs
   |   |   ├── runs                        Save run history
   |   |   └── weights                     Save weights after train
-  Dataset                                 Raw dataset
+  Orignal_Dataset                         Raw dataset
   |   ├── NLM_Mapping                     Mapping title of chapter to IMRaD
   |   ├── arXiv                           Raw arXiv dataset
   |   └── pubmed                          Raw Pubmed dataset
@@ -145,28 +145,156 @@ We limit the summary length of the model output to no more than 300 and no less 
 
 - **Results of SFR task**
 
-| **Model**   |             |  **Pubmed** |             |             | **arXiv**   |             |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-|             | **Macro_R** | **Macro_P** | **Macro_F** | **Macro_P** | **Macro_R** | **Macro_F** |
-| BiLSTM      | 89.97%      | 88.85%      | 89.41%      | 86.21%      | 84.62%      | 85.40%      |
-| BiLSTM-ATT  | 90.12%      | 89.39%      | 89.75%      | 86.74%      | 85.29%      | 86.01%      |
-| BERT        | 91.35%      | 90.11%      | 90.73%      | 88.19%      | 87.02%      | 87.60%      |
-| RoBERTa     | 91.72%      | 90.67%      | 9120%       | 88.33%      | 87.17%      | 87.74%      |
-| **SciBERT** | **92.38%**  | 91.21%      | **91.79%**  | 89.01%      | 87.84%      | **88.42%**  |
-| T5          | 92.21%      | **91.24%**  | 91.72%      | 87.90%      | 86.61%      | 87.25%      |
+<table>
+  <tr>
+    <th rowspan="2">Model</th>
+    <th colspan="3">Pubmed</th>
+    <th colspan="3">arXiv</th>
+  </tr>
+  <tr>
+    <th>Macro_R</th>
+    <th>Macro_P</th>
+    <th>Macro_F</th>
+    <th>Macro_R</th>
+    <th>Macro_P</th>
+    <th>Macro_F</th>
+  </tr>
+   <tr>
+    <td>BiLSTM</td>
+    <td>89.97%</td>
+    <td>88.85%</td>
+    <td>89.41%</td>
+    <td>86.21%</td>
+    <td>84.62%</td>
+    <td>85.40%</td>
+  </tr>
+  <tr>
+    <td>BiLSTM-ATT</td>
+    <td>90.12%</td>
+    <td>89.39%</td>
+    <td>89.75%</td>
+    <td>86.74%</td>
+    <td>85.29%</td>
+    <td>86.01%</td>
+  </tr>
+  <tr>
+    <td>BERT</td>
+    <td>91.35%</td>
+    <td>90.11%</td>
+    <td>90.73%</td>
+    <td>88.19%</td>
+    <td>87.02%</td>
+    <td>87.60%</td>
+  </tr>
+  <tr>
+    <td>RoBERTa</td>
+    <td>91.72%</td>
+    <td>90.67%</td>
+    <td>91.20%</td>
+    <td>88.33%</td>
+    <td>87.17%</td>
+    <td>87.74%</td>
+  </tr>
+  <tr>
+    <td>SciBERT</td>
+    <td>92.38%</td>
+    <td>91.21%</td>
+    <td>91.79%</td>
+    <td>89.01%</td>
+    <td>87.84%</td>
+    <td>88.42%</td>
+  </tr>
+  <tr>
+    <td>T5</td>
+    <td>92.21%</td>
+    <td>91.24%</td>
+    <td>91.72%</td>
+    <td>87.90%</td>
+    <td>86.61%</td>
+    <td>87.25%</td>
+  </tr>
+</table>
 
 - **Results of AS task**
 
-| **Models**                             |             |  **arXiv**  |             |             |  **Pubmed** |             |
-| -------------------------------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-|                                        | **Rouge-1** | **Rouge-2** | **Rouge-L** | **Rouge-1** | **Rouge-2** | **Rouge-L** |
-| BERTSUM  (Liu,  2019)                  | 31.98       | 10.02       | 27.75       | 34.39       | 13.24       | 30.90       |
-| BART  (Lewis et al., 2019)             | 34.87       | 12.82       | 29.83       | 37.44       | 15.39       | 32.71       |
-| PEGASUS  (Zhang et al., 2020)          | 33.36       | 11.18       | 28.94       | 36.94       | 15.05       | 31.81       |
-| T5-base  (Raﬀel et al., 2020)          | 33.75       | 11.76       | 29.01       | 37.75       | 14.92       | 32.65       |
-| BigBird-Pegasus-4K                     | 42.47       | 17.95       | 37.29       | 42.81       | 18.71       | 39.23       |
-| Longformer-16k  (Beltagy et al., 2020) | **42.81**   | **18.26**   | **38.72**   | **44.39**   | **19.07**   | **40.08**   |
-| GPT-4-32K                              | 29.96       |  9.13       | 27.01       | 30.02       |  9.17       | 27.62       |
+<table>
+  <tr>
+    <th rowspan="2">Models</th>
+    <th colspan="3">arXiv</th>
+    <th colspan="3">Pubmed</th>
+  </tr>
+  <tr>
+    <th>Rouge-1</th>
+    <th>Rouge-2</th>
+    <th>Rouge-L</th>
+    <th>Rouge-1</th>
+    <th>Rouge-2</th>
+    <th>Rouge-L</th>
+  </tr>
+  <tr>
+    <td>BERTSUM (Liu, 2019)</td>
+    <td>31.98</td>
+    <td>10.02</td>
+    <td>27.75</td>
+    <td>34.39</td>
+    <td>13.24</td>
+    <td>30.90</td>
+  </tr>
+  <tr>
+    <td>BART (Lewis et al., 2019)</td>
+    <td>34.87</td>
+    <td>12.82</td>
+    <td>29.83</td>
+    <td>37.44</td>
+    <td>15.39</td>
+    <td>32.71</td>
+  </tr>
+  <tr>
+    <td>PEGASUS (Zhang et al., 2020)</td>
+    <td>33.36</td>
+    <td>11.18</td>
+    <td>28.94</td>
+    <td>36.94</td>
+    <td>15.05</td>
+    <td>31.81</td>
+  </tr>
+  <tr>
+    <td>T5-base (Raﬀel et al., 2020)</td>
+    <td>33.75</td>
+    <td>11.76</td>
+    <td>29.01</td>
+    <td>37.75</td>
+    <td>14.92</td>
+    <td>32.65</td>
+  </tr>
+  <tr>
+    <td>BigBird-Pegasus-4K</td>
+    <td>42.47</td>
+    <td>17.95</td>
+    <td>37.29</td>
+    <td>42.81</td>
+    <td>18.71</td>
+    <td>39.23</td>
+  </tr>
+  <tr>
+    <td>Longformer-16k (Beltagy et al., 2020)</td>
+    <td><strong>42.81</strong></td>
+    <td><strong>18.26</strong></td>
+    <td><strong>38.72</strong></td>
+    <td><strong>44.39</strong></td>
+    <td><strong>19.07</strong></td>
+    <td><strong>40.08</strong></td>
+  </tr>
+  <tr>
+    <td>GPT-4-32K</td>
+    <td>29.96</td>
+    <td>09.13</td>
+    <td>27.01</td>
+    <td>30.02</td>
+    <td>09.17</td>
+    <td>27.62</td>
+  </tr>
+</table>
 
 - **Results of the human evaluation of the summaries generated by different modelsk**
 
