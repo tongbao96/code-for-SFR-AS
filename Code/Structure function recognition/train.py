@@ -19,10 +19,9 @@ from utils import train_one_epoch, validate, read_json, init_logger
 import warnings
 warnings.filterwarnings("ignore")
 
-
 def main(args):
     pprint(args.__dict__)
-    0
+
     # tokenizer
     tokenizer = BertTokenizer.from_pretrained(args.pretrained_model_name_or_path)
     
@@ -78,6 +77,7 @@ def main(args):
                                                    num_training_steps=len(train_loader) * args.num_train_epochs)
 
     # tensorboard --logdir=runs
+    # 用于记录训练过程中各个参数/指标的变化
     current_time = datetime.now().strftime("%b%d_%H-%M-%S")
     log_dir = os.path.join(sys.path[0], "runs", "{}_{}".format(args.pretrained_model_name_or_path, current_time))
     tb_writer = SummaryWriter(log_dir=log_dir)
@@ -87,6 +87,10 @@ def main(args):
     os.makedirs(args.weights_dir, exist_ok=True)
 
     best_macro_f1 = 0.0
+    macro_f1_scores = []
+    macro_precision_scores = []
+    macro_recall_scores = []
+
     for epoch in range(args.num_train_epochs):
         train_result = train_one_epoch(model=model,
                                        device=args.device,
@@ -110,6 +114,8 @@ def main(args):
             'dev_loss': dev_result['loss'],
             'dev_accuracy': dev_result['accuracy'],
             'dev_macro_f1': dev_result['macro_f1'],
+            'dev_macro_precision': dev_result['macro_precision'],
+            'dev_macro_recall': dev_result['macro_recall'],
             'dev_micro_f1': dev_result['micro_f1'],
             'dev_weighted_f1': dev_result['weighted_f1']
         }
@@ -120,11 +126,32 @@ def main(args):
             tb_writer.add_scalar(key, value, epoch)
             logger.info(f"{key}: {value}")
 
-        # best macro_f1 on Dev
+        # 保存在验证集上 macro_f1 最高的模型
+        macro_f1_scores.append(dev_result['macro_f1'])
+        macro_precision_scores.append(dev_result['macro_precision'])
+        macro_recall_scores.append(dev_result['macro_recall'])
+
         if dev_result['macro_f1'] > best_macro_f1:
             torch.save(model.state_dict(), os.path.join(args.weights_dir, '{}-{}-epoch{}-macro_f1{:.3f}.pth'.format(
                        args.pretrained_model_name_or_path, current_time, epoch, dev_result['macro_f1'])))
             best_macro_f1 = dev_result['macro_f1']
+
+        compute_confidence_interval(macro_f1_scores, metric_name="F1 Score", confidence=0.95)
+        compute_confidence_interval(macro_precision_scores, metric_name="Precision", confidence=0.95)
+        compute_confidence_interval(macro_recall_scores, metric_name="Recall", confidence=0.95)
+
+import numpy as np
+from scipy import stats
+
+def compute_confidence_interval(scores, metric_name="Metric", confidence=0.95):
+    mean = np.mean(scores)
+    sem = stats.sem(scores)  # 计算标准误差
+    margin_of_error = sem * stats.t.ppf((1 + confidence) / 2., len(scores) - 1)
+    lower_bound = mean - margin_of_error
+    upper_bound = mean + margin_of_error
+
+    print(f"{metric_name} Mean: {mean:.3f}")
+    print(f"{confidence * 100}% Confidence Interval: [{lower_bound:.3f}, {upper_bound:.3f}]")
 
 
 if __name__ == "__main__":
