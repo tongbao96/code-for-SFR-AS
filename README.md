@@ -149,7 +149,7 @@ For the AS task, we selecte articles from both the arXiv and Pubmed datasets tha
 
 1. The reference for G-eval can be found in [*G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment*](https://arxiv.org/pdf/2303.16634) 
 
-2.The API still needs to be obtained from the official website, and pay for API usage.
+2. The API still needs to be obtained from the official website, and pay for API usage.
 
 
 ## Citation
