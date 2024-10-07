@@ -47,9 +47,9 @@ In this study, we propose a novel two-stage abstract summarization(AS) framework
 
 This paper conducts experiments on two widely accepted datasets of scientific paper abstracts, arXiv and PubMed , Original data from the paper [A Discourse-Aware Attention Model for Abstractive Summarization of Long Document](https://arxiv.org/abs/1804.05685). 
 
- You can download the arXiv dataset(https://archive.org/download/armancohan-long-summarization-paper-code/arxiv-dataset.zip)  and the Pubmed dataset(https://archive.org/download/armancohan-long-summarization-paper-code/pubmed-dataset.zip).
+ You can download the arXiv dataset at (https://archive.org/download/armancohan-long-summarization-paper-code/arxiv-dataset.zip) and the Pubmed dataset at (https://archive.org/download/armancohan-long-summarization-paper-code/pubmed-dataset.zip).
 
-The datasets are rather large. You need about 5G disk space to download and about 15G additional space when extracting the files. Each `tar` file consists of 4 files. `train.txt`, `val.txt`, `test.txt` respectively correspond to the training, validation, and test sets. The `vocab` file is a plaintext file for the vocabulary.
+The datasets are substantial, requiring about 5 GB of disk space for download and approximately 15 GB additional space for extraction. Each `tar` file consists of 4 files. `train.txt`, `val.txt`, `test.txt` respectively correspond to the training, validation, and test sets. The `vocab` file is a plaintext file for the vocabulary.
 
 The files are in jsonlines format where each line is a json object corresponding to one scientific paper from arXiv or PubMed. The abstract, sections and body are all sentence tokenized. The json objects are in the following format:
 
@@ -67,7 +67,7 @@ The files are in jsonlines format where each line is a json object corresponding
 
 We use [National Library of Medicine (NLM) ]([lhncbc.nlm.nih.gov/ii/areas/structured-abstracts/downloads/Structured-Abstracts-Labels-102615.txt](https://www.lhncbc.nlm.nih.gov/ii/areas/structured-abstracts/downloads/Structured-Abstracts-Labels-102615.txt))files to map and align chapter title according to the IMRaD (*Introduction*, *Methods*, *Results* and *Conclusion*)  format.
 
- You can download the structural function recognition dataset(https://doi.org/10.5281/zenodo.13772003). The datasets are rather large. You need about 2G disk space to download.
+ You can download the structural function recognition dataset at (https://doi.org/10.5281/zenodo.13772003). The datasets are rather large as well, requiring about 2 GB of disk space for download.
 
 For the SFR task, the traning data format as follwing:
 
@@ -118,7 +118,7 @@ For the AS task, we selecte articles from both the arXiv and Pubmed datasets tha
 
 - [x] **For SFR task:**
 
-1. Download the weights for SciBERT([allenai/scibert: A BERT model for scientific text. (github.com)](https://github.com/allenai/scibert)) to the SciBERT directory
+1. Download the weights for SciBERT at([allenai/scibert: A BERT model for scientific text. (github.com)](https://github.com/allenai/scibert)) to the SciBERT directory
    
 2. Download the SFR task dataset from the link provided earlier.
    
