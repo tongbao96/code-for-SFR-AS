@@ -3,7 +3,7 @@
 
 ## Overview
 
-**Dataset and source code for paper "Enhancing Abstractive Summarization of Scientific Papers based on Structure Information".**
+**Dataset and source code for paper: "Enhancing Abstractive Summarization of Scientific Papers based on Structure Information".**
 
 In this study, we propose a novel two-stage abstract summarization(AS) framework for scientific articles based on structure function recognition(SFR). The main contributions of this paper are as follows:
 
