@@ -45,7 +45,7 @@ In this study, we propose a novel two-stage abstract summarization(AS) framework
 
 ### Raw Data 
 
-This paper conducts experiments on two widely accepted datasets of scientific paper abstracts, arXiv and PubMed , Original data from the paper [A Discourse-Aware Attention Model for Abstractive Summarization of Long Document](https://arxiv.org/abs/1804.05685). 
+This paper conducts experiments on two widely accepted datasets of scientific paper abstracts, arXiv and PubMed , Original data from the paper [[A Discourse-Aware Attention Model for Abstractive Summarization of Long Document]](https://arxiv.org/abs/1804.05685). 
 
  You can download the arXiv dataset at (https://archive.org/download/armancohan-long-summarization-paper-code/arxiv-dataset.zip) and the Pubmed dataset at (https://archive.org/download/armancohan-long-summarization-paper-code/pubmed-dataset.zip).
 
