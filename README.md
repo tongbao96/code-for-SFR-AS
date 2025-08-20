@@ -156,5 +156,5 @@ For the AS task, we selecte articles from both the arXiv and Pubmed datasets tha
 
 Please cite the following paper if you use this code and dataset in your work.
 
->Tong Bao, Heng Zhang, Chengzhi Zhang\*. Enhancing Abstractive Summarization of Scientific Papers based on Structure Information. ***Expert system with application***, 2025, 261: 125529. [[doi]](https://doi.org/10.1016/j.eswa.2024.125529) [[Dataset & Source Code]]( https://github.com/tongbao96/code-for-SFR-AS).
+>Tong Bao, Heng Zhang, Chengzhi Zhang\*. Enhancing Abstractive Summarization of Scientific Papers based on Structure Information. ***Expert Systems with Applications***, 2025, 261: 125529. [[doi]](https://doi.org/10.1016/j.eswa.2024.125529) [[Dataset & Source Code]]( https://github.com/tongbao96/code-for-SFR-AS).
 
